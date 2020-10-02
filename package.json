@@ -1,0 +1,20 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "keywords": [
+    "e-commerce",
+    "nodejs",
+    "mongodb",
+    "reactjs"
+  ],
+  "author": "Rahul Mahajan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
