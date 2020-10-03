@@ -1,10 +1,13 @@
-const express = require("express");
-const products = require("./data/products");
+import express from "express";
+import dotenv from "dotenv";
+import products from "./data/products.js";
+
+dotenv.config();
 
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("E-commerce api");
+  res.send("E-commerce api running...");
 });
 
 app.get("/api/products", (req, res) => {
@@ -16,6 +19,10 @@ app.get("/api/products/:id", (req, res) => {
   res.json(product);
 });
 
-app.listen(5000, (req, res) => {
-  console.log("Server started");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, (req, res) => {
+  console.log(
+    `Server Started in ${process.env.NODE_ENV} mode on port ${process.env.PORT}`
+  );
 });
