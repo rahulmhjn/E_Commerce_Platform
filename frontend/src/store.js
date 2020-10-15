@@ -31,8 +31,15 @@ const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
 
+const shippingAddressFromStorage = localStorage.getItem("shippingAddress")
+  ? JSON.parse(localStorage.getItem("shippingAddress"))
+  : {};
+
 const initialState = {
-  cart: { cartItems: cartItemsFromStorage }, // if we close the window or refresh then the items are being loaded from the localstorage as soon as the store is initialized
+  cart: {
+    cartItems: cartItemsFromStorage,
+    shippingAddress: shippingAddressFromStorage,
+  }, // if we close the window or refresh then the items are being loaded from the localstorage as soon as the store is initialized
   userLogin: { userInfo: userInfoFromStorage },
 };
 
