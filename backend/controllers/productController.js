@@ -4,23 +4,37 @@ import Product from "../models/productModel.js";
 // @desc    fetch all products
 // @route   GET /api/products
 // @access  Public
-const getProducts = asyncHandler(async(req, res) => {
-    const products = await Product.find({});
+const getProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({});
 
-    res.json(products);
+  res.json(products);
 });
 
 // @desc    fetch single product
 // @route   GET /api/products/:id
 // @access  Public
-const getProductsById = asyncHandler(async(req, res) => {
-    const product = await Product.findById(req.params.id);
-    if (product) {
-      res.json(product);
-    } else {
-      res.status(404);
-      throw new Error("Product not found");
-    }
+const getProductsById = asyncHandler(async (req, res) => {
+  const product = await Product.findById(req.params.id);
+  if (product) {
+    res.json(product);
+  } else {
+    res.status(404);
+    throw new Error("Product not found");
+  }
 });
 
-export { getProducts, getProductsById }
+// @desc    Delete Product
+// @route   GET /api/products/:id
+// @access  Private/Admin
+const deleteProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findById(req.params.id);
+  if (product) {
+    await product.remove();
+    res.json({ message: "Product Deleted successfully" });
+  } else {
+    res.status(404);
+    throw new Error("Product not found");
+  }
+});
+
+export { getProducts, getProductsById, deleteProduct };
