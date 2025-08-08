@@ -21,7 +21,7 @@ const Header = () => {
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
-              {/* <img src={Logo} height="45vh" width="100vh" alt="Shop Gateway" /> */}
+              {/* <img src={Logo} height="45vh" width="100vh" alt="Marketly" /> */}
               <div className="logo">
                 <span className="grey-color"> &lt;</span>
                 <span className="logo-name grey-color">Rahul Mahajan</span>

@@ -12,7 +12,7 @@ export const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: "Welcome to Shop Gateway",
+  title: "Marketly",
   description: "We sell the best products for cheap",
   keywords: "electronics, buy electronics, cheap electronics",
 };
