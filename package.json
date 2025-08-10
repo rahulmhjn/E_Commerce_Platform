@@ -1,9 +1,12 @@
 {
-  "name": "shop-gateway",
+  "name": "marketly",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
